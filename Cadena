@@ -1,0 +1,54 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package uspg;
+
+import java.util.Scanner;
+import java.util.Stack;
+public class Cadena {
+
+     public static void main(String[] args) {
+        System.out.println("Introdusca las cadenas a utilizar");
+        Scanner in= new Scanner(System.in); //donde guardamos los datos en ese caso sera de tipo string porque son parentesis
+        String entrada=in.next();
+        Stack <Character>pila = new <Character>Stack(); //stack es una funcion nos sirve para que el usuario no diga un n de veces 
+        int i= 0; //aca inicializamos una variable llamada i para que nos recorra los parentesis
+        int tamanio=entrada.length(); //aca nos recorrera el tamanio hasta dodne termine el numero de vecs que hizo
+            while(i<tamanio){
+                if (entrada.charAt(i) == '(' || entrada.charAt(i) == '[' || entrada.charAt(i) == '{') {
+    	    	pila.push(entrada.charAt(i));
+                
+                if (entrada.charAt(i)==')') {
+    	    	    if (pila.pop()!='(') {
+    	    	        
+    	    	    }
+    	     	} else {
+    	    	    if (entrada.charAt(i)==']') {
+    	    	        if (pila.pop()!='[') {
+    	    	            
+    	    	        }
+    	    	    } else {
+    	    	        if (entrada.charAt(i)=='}') {
+    	    	            if (pila.pop()!='{') {
+    	    	                
+    	    	            }
+    	    	        }
+    	    	    }
+    	        }
+                    
+                }           //aca ira inicializando one by one 
+            
+            if (pila.isEmpty() && i==tamanio)   // si la pila no tien nada pero el el inicializado i llego al n de veces que elegi que se aocrrecto
+
+               System.out.print("correcta\n");
+
+            else 
+               System.out.print("no correcta\n");     // si no falso
+        }
+        
+           
+
+     }
+}
